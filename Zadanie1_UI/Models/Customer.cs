@@ -1,4 +1,4 @@
-namespace Zadanie1_UI.Data
+namespace Zadanie1_UI.Models
 {
     public class Customer
     {

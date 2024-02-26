@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Zadanie1_UI.Data
+namespace Zadanie1_UI.Models
 {
     public class Address
     {

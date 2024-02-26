@@ -12,6 +12,7 @@
                 <th>Name</th>
                 <th>Address</th>
                 <th>NIP</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
                     <td>@customer.Name</td>
                     <td>@customer.Address.ToString()</td>
                     <td>@customer.NIP</td>
+                    <td><a asp-page="/Edit" asp-route-id="@customer.Id">edit</a></td>
                 </tr>
             }
         </tbody>

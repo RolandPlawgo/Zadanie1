@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Zadanie1_UI.Data;
+using Zadanie1_UI.Models;
 
 namespace Zadanie1_UI.Pages
 {
@@ -9,12 +9,10 @@ namespace Zadanie1_UI.Pages
 		[BindProperty]
 		public List<Customer> Customers { get; set; } = new List<Customer>();
 
-		private readonly ILogger<IndexModel> _logger;
 		private readonly IHttpClientFactory _httpClientFactory;
 
-		public IndexModel(ILogger<IndexModel> logger, IHttpClientFactory httpClientFactory)
+		public IndexModel(IHttpClientFactory httpClientFactory)
 		{
-			_logger = logger;
 			_httpClientFactory = httpClientFactory;
 		}
 
