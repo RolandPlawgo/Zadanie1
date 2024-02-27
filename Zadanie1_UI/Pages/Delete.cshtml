@@ -1,0 +1,18 @@
+﻿@page
+@model Zadanie1_UI.Pages.DeleteModel
+@{
+	ViewData["Title"] = "Delete customer";
+}
+
+<h1>Do you want to delete @Model.CurrentCustomer.Name?</h1>
+<dl>
+	<dt>Customer Name</dt>
+	<dd>@Model.CurrentCustomer.Name</dd>
+	<dt>NIP</dt>
+	<dd>@Model.CurrentCustomer.NIP</dd>
+	<dt>Address</dt>
+	<dd>@Model.CurrentCustomer.Address.ToString()</dd>
+</dl>
+<form method="post">
+	<input type="submit" value="Delete" class="btn btn-danger" />
+</form>
