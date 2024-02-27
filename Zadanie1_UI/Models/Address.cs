@@ -8,7 +8,7 @@ namespace Zadanie1_UI.Models
         public int Id { get; set; }
         public string Street { get; set; }
         public string HouseNumber { get; set; }
-        public string PostalCode { get; set; }
+        public string ZipCode { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
 
@@ -19,7 +19,7 @@ namespace Zadanie1_UI.Models
             stringBuilder.Append(' ');
             stringBuilder.Append(HouseNumber);
             stringBuilder.Append(", ");
-            stringBuilder.Append(PostalCode);
+            stringBuilder.Append(ZipCode);
             stringBuilder.Append(' ');
             stringBuilder.Append(City);
             stringBuilder.Append(", ");

@@ -7,8 +7,7 @@ namespace Zadanie1_API.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
-        [MaxLength(10)]
-        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Use just digits")]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "NIP must consist of 10 digits")]
         public string NIP { get; set; }
     }
 }

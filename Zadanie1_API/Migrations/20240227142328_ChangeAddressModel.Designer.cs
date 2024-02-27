@@ -11,8 +11,8 @@ using Zadanie1_API.Data;
 namespace Zadanie1_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240225131052_InitialDb")]
-    partial class InitialDb
+    [Migration("20240227142328_ChangeAddressModel")]
+    partial class ChangeAddressModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace Zadanie1_API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Zadanie1.Models.Address", b =>
+            modelBuilder.Entity("Zadanie1_API.Models.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,11 +43,11 @@ namespace Zadanie1_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ZipCode")
+                    b.Property<string>("Street")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Street")
+                    b.Property<string>("ZipCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -56,7 +56,7 @@ namespace Zadanie1_API.Migrations
                     b.ToTable("Address");
                 });
 
-            modelBuilder.Entity("Zadanie1.Models.Customer", b =>
+            modelBuilder.Entity("Zadanie1_API.Models.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -69,8 +69,7 @@ namespace Zadanie1_API.Migrations
 
                     b.Property<string>("NIP")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -83,9 +82,9 @@ namespace Zadanie1_API.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Zadanie1.Models.Customer", b =>
+            modelBuilder.Entity("Zadanie1_API.Models.Customer", b =>
                 {
-                    b.HasOne("Zadanie1.Models.Address", "Address")
+                    b.HasOne("Zadanie1_API.Models.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
